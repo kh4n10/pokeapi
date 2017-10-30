@@ -55,7 +55,7 @@ describe Pokeapi do
       it "returns response code and gives the ok message(200)" do
         expect(@berries_flavors.code).to eql(200)
       end
-      it "Returns the resouce list as a Hash" do
+      it "Returns the resouce list as a Hash in JSON format" do
         expect(@berries_flavors.parsed_response).to be_instance_of Hash
       end
     end

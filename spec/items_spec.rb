@@ -4,6 +4,7 @@ require "rspec"
 
 
 describe Pokeapi do
+  
   context "given a request for an item" do
     it "responds with code 200; okay" do
       expect(Pokeapi.get_the("item",1).code).to eql(200)
@@ -63,6 +64,4 @@ describe Pokeapi do
       expect(Pokeapi.get_the_resource("item-pocket").code).to eql(200)
     end
   end
-
-
 end
