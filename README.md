@@ -28,3 +28,7 @@ I tested each endpoint in the pokemon resource to return the code 200 when given
 ####James
 
 ####Abass
+
+* I tested each endpoint in the location/utility resources. Ensuring that its in JSON format and that it returns the 200 code when given a valid ID.
+
+* I tested that given an id for the evolution, games and items resources it returns the correct data e.g. a name returns the correct name in a string etc.
