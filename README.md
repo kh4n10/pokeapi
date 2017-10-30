@@ -34,4 +34,4 @@ made tests for checking that list requests return code 200 and made tests to che
 * I tested each endpoint in the location/utility resources. Ensuring that its in JSON format and that it returns the 200 code when given a valid ID.
 
 * I tested that given an id for the evolution, games and items resources it returns the correct data e.g. a name returns the correct name in a string etc.
->>>>>>> bb946a0f3022a717c78d92baaebe77ec3e051dd4
+
