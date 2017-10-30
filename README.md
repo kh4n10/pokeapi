@@ -19,7 +19,8 @@ I tested each endpoint in the pokemon resource to return the code 200 when given
 
 
 ####Martha
-I tested each endpoint in Encounters, Evolution and Games to return the code 200 when given no ID or a valid ID
+I tested each endpoint in Encounters, Evolution and Games to return the code 200 when given no ID or a valid ID.
+I tested each endpoint in Items to return the ID given and a name as a string.
 
 ####Liam
 
