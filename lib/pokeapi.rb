@@ -2,9 +2,9 @@ require "httparty"
 require "json"
 
 class Pokeapi
-	include HTTParty
+  include HTTParty
 
-	base_uri "http://pokeapi.co/api/v2"
+  base_uri "http://pokeapi.co/api/v2"
 
   def self.get_the_resource(resource)
     self.get("/#{resource}")
