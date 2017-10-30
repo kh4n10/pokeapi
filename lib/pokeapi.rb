@@ -5,10 +5,11 @@ class Pokeapi
     include HTTParty
 
 
-    base_uri "http://pokeapi.co/api/v2"
+  base_uri "http://pokeapi.co/api/v2"
 
   def self.get_the_resource(resource)
     self.get("/#{resource}")
+  end
 
   def self.get_the(resource, id)
     self.get("/#{resource}/#{id}")
