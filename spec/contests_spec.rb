@@ -59,7 +59,7 @@ describe Pokeapi do
       end
       it "returns a super effect" do
         expect(@a_super_effect["id"]).to eql(1)
-        expect(@a_type["apeal"]).to eql(2)
+        expect(@a_super_effect["appeal"]).to eql(2)
       end
     end
     context "when requesting the resource list" do
