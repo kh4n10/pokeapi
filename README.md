@@ -24,6 +24,7 @@ I tested each endpoint in Encounters, Evolution and Games to return the code 200
 ####Liam
 
 ####Luke
+Luke created the get resource method which allowed tests on each spec checking that the request would work with only the resource name and doesn't need an ID.
 
 ####James
 
