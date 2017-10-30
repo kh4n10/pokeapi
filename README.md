@@ -16,6 +16,10 @@ We then derived user stories which would assist us in creating our test cases/co
 
 #### Chris 
 I tested each endpoint in the pokemon resource to return the code 200 when given a valid ID.
+I tested each endpoint in the pokemon resource for the return of data, by looking for the keys that were supposed to be returned with each query. 
+I tested each endpoint in the pokemon resource for the return of the ID that was queried in order to test if it gets back the entry. 
+
+I tested every endpoint that could take a name as a variable, that it returns HTML code 200 and returns valid data.
 
 
 <<<<<<< HEAD
