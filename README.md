@@ -25,6 +25,7 @@ I tested each endpoint in the pokemon resource to return the code 200 when given
 
 ####Luke
 Luke created the get resource method which allowed tests on each spec checking that the request would work with only the resource name and doesn't need an ID.
+Checked locations and utility return valid data.
 
 ####James
 
