@@ -4,6 +4,7 @@ require "rspec"
 
 describe "Pokeapi" do
 
+
   describe "When the languages resource has been selected" do
     context "A language id has been inputted" do
 
@@ -21,6 +22,7 @@ describe "Pokeapi" do
     end
   end
 
+
   describe "When given a resouce and no ID" do
     context "Return the resouce list" do
       it "Returns code  and gives the ok message(200)" do
@@ -30,7 +32,6 @@ describe "Pokeapi" do
       it "Returns the resouce list as a JSON file" do
         expect(Pokeapi.get_the_resource("language").parsed_response).to be_instance_of Hash
       end
-
 
     end
     

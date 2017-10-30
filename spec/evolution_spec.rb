@@ -11,7 +11,16 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("evolution-chain", 1).code).to eql(200)
 				end
+
+				it "returns the correct data for the id which has been inputted" do
+					expect(Pokeapi.get_the("evolution-chain", 1)["id"]).to eql(1)
+				end
+
+				it "for a given ID it returns the correct data, in this instance the name" do
+					expect(Pokeapi.get_the("evolution-chain", 1)["chain"]["species"]["name"]).to be_instance_of String
+				end
 			end
+
 			context "When requesting evolution chain with no id" do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the_resource("evolution-chain").code).to eql(200)
@@ -24,7 +33,16 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("evolution-trigger", 1).code).to eql(200)
 				end
+
+				it "returns the correct data for the id which has been inputted" do
+					expect(Pokeapi.get_the("evolution-trigger", 1)["id"]).to eql(1)
+				end
+# line 41 takes it from a hash within an array
+				it "for a given ID it returns the correct data, in this instance the name" do
+					expect(Pokeapi.get_the("evolution-trigger", 1)["pokemon_species"][0]["name"]).to be_instance_of String
+				end
 			end
+
 			context "When requesting evolution trigger with no id" do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the_resource("evolution-trigger").code).to eql(200)

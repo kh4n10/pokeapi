@@ -69,7 +69,6 @@ describe "Pokeapi" do
       it "for a given ID it returns the correct data, in this instance the name" do
         expect(Pokeapi.get_the("region", 1)["main_generation"]["name"]).to be_instance_of String
       end
-
     
 		end
 
