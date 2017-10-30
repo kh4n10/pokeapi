@@ -44,3 +44,10 @@ made tests for checking that list requests return code 200 and made tests to che
 * I tested each endpoint in the location/utility resources. Ensuring that its in JSON format and that it returns the 200 code when given a valid ID.
 
 * I tested that given an id for the evolution resources it returns the correct data e.g. a name returns the correct name in a string etc. Getting a key from a nested hash, or a hash within an array.
+
+
+## Future work
+* If we had more time, more specific and robust tests would be created e.g. can we edit or delete entries from the database.
+* Create edge cases e.g. does it take an integer when it should take a string etc.
+* Making sure the API gives the correct error codes for the relevant requests.
+* Use spec_helper.rb
