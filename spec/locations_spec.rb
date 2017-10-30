@@ -4,7 +4,6 @@ require "rspec"
 
 describe "Pokeapi" do
 
-<<<<<<< HEAD
 	describe "When the locations resource has been selected" do
 		context "A location id has been inputted" do
 
