@@ -14,5 +14,15 @@ describe Pokeapi do
     end
   end
 
+  context "given a list request" do
+    it "responds" do 
+      expect(Pokeapi.get_the_resource("item").code).to eql(200)
+      expect(Pokeapi.get_the_resource("item-attribute").code).to eql(200)
+      expect(Pokeapi.get_the_resource("item-category").code).to eql(200)
+      expect(Pokeapi.get_the_resource("item-fling-effect").code).to eql(200)
+      expect(Pokeapi.get_the_resource("item-pocket").code).to eql(200)
+    end
+  end
+
 
 end
