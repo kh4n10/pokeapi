@@ -11,6 +11,9 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("generation", 1).code).to eql(200)
 				end
+				it "returns data with id 1" do
+					expect(Pokeapi.get_the("generation", 1)['id']).to eql(1)
+				end
 			end
 			context "When requesting generation with no id" do
 				it "returns response code 200" do
@@ -23,6 +26,9 @@ describe Pokeapi do
 			context "When requesting a pokedex by id 1" do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("pokedex", 1).code).to eql(200)
+				end
+				it "returns data with id 1" do
+					expect(Pokeapi.get_the("pokedex", 1)['id']).to eql(1)
 				end
 			end
 			context "When requesting pokedex with no id" do
@@ -37,6 +43,9 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("version", 1).code).to eql(200)
 				end
+				it "returns data with id 1" do
+					expect(Pokeapi.get_the("version", 1)['id']).to eql(1)
+				end
 			end
 			context "When requesting version with no id" do
 				it "returns response code 200" do
@@ -49,6 +58,9 @@ describe Pokeapi do
 			context "When requesting a version group by id 1" do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("version-group", 1).code).to eql(200)
+				end
+				it "returns data with id 1" do
+					expect(Pokeapi.get_the("version-group", 1)['id']).to eql(1)
 				end
 			end
 			context "When requesting version group with no id" do

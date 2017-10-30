@@ -19,6 +19,10 @@ describe Pokeapi do
 				it "for a given ID it returns the correct data, in this instance the name" do
 					expect(Pokeapi.get_the("evolution-chain", 1)["chain"]["species"]["name"]).to be_instance_of String
 				end
+				
+				it "returns data with id 1" do
+					expect(Pokeapi.get_the("encounter-condition", 1)['id']).to eql(1)
+				end
 			end
 			context "When requesting evolution chain with no id" do
 				it "returns response code 200" do
