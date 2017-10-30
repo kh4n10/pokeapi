@@ -27,5 +27,5 @@ I tested each endpoint in Encounters, Evolution and Games to return the code 200
 Luke created the get resource method which allowed tests on each spec checking that the request would work with only the resource name and doesn't need an ID.
 
 ####James
-made tests for checking that list requests return code 200 and made tests to check each attribute also returns 200; okay.
+made tests for checking that list requests return code 200 and made tests to check each attribute also returns 200; okay. checked all end points to contain valid id data.
 ####Abass
