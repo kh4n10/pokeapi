@@ -16,11 +16,16 @@ describe Pokeapi do
       it "will respond with code 200; okay" do
         expect(Pokeapi.get_the("move-ailment",1).code).to eql(200)
       end
+      it "will return id of 1"
+      expect(Pokeapi.get_the("move-ailment", 1)['id']).to eql(1)
+      end
     end
 
     context "given a request for battle styles" do
       it "responds with code 200; okay" do
         expect(Pokeapi.get_the("move-battle-style",1).code).to eql(200)
+      it "will return id of 1"
+      expect(Pokeapi.get_the("move-battle-style", 1)['id']).to eql(1)
       end
     end
 
@@ -28,11 +33,17 @@ describe Pokeapi do
       it "respond with code 200; okay" do
         expect(Pokeapi.get_the("move-category",1).code).to eql(200)
       end
+      it "will return id of 1"
+        expect(Pokeapi.get_the("move-category", 1)['id']).to eql(1)
+      end
     end
 
     context "given a request for damage classes" do
       it "respond with code 200; okay" do
         expect(Pokeapi.get_the("move-damage-class",1).code).to eql(200)
+      end
+      it "will return id of 1"
+        expect(Pokeapi.get_the("move-damage-class", 1)['id']).to eql(1)
       end
     end
 
@@ -40,11 +51,17 @@ describe Pokeapi do
       it "respond with code 200; okay" do
         expect(Pokeapi.get_the("move-learn-method",1).code).to eql(200)
       end
+      it "will return id of 1"
+        expect(Pokeapi.get_the("move-learn-method", 1)['id']).to eql(1)
+      end
     end
 
     context "given a request for targets" do
       it "respond with code 200; okay" do
         expect(Pokeapi.get_the("move-target",1).code).to eql(200)
+      end
+      it "will return id of 1"
+        expect(Pokeapi.get_the("move-target", 1)['id']).to eql(1)
       end
     end
 

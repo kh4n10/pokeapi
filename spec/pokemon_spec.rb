@@ -3,13 +3,39 @@ require "pokeapi"
 require "rspec"
 
 
-
 describe "Pokemon Api" do
+  before(:all) do
+    @id = 1
 
+    @pokemon = Pokeapi.get_the("pokemon", @id)
+    @ability = Pokeapi.get_the("ability", 1)
+    @characteristic = Pokeapi.get_the("characteristic", @id)
+    @egg_group = Pokeapi.get_the("egg-group", @id)
+    @gender = Pokeapi.get_the("gender", @id)
+    @growth_rate = Pokeapi.get_the("growth-rate", @id)
+    @nature = Pokeapi.get_the("nature", @id)
+    @pokeathlon_stat = Pokeapi.get_the("pokeathlon-stat", @id)
+    @pokemon_color = Pokeapi.get_the("pokemon-color", @id)
+    @pokemon_form = Pokeapi.get_the("pokemon-form", @id)
+    @pokemon_habitat = Pokeapi.get_the("pokemon-habitat", @id)
+    @pokemon_shape = Pokeapi.get_the("pokemon-shape", @id)
+    @pokemon_species =Pokeapi.get_the("pokemon-species", @id)
+    @stat = Pokeapi.get_the("stat", @id)
+    @type = Pokeapi.get_the("type", @id)
+
+  end
   describe "Pokemon Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokemon", 1).code).to eql(200)
+        expect(@pokemon.code).to eql(200)
+      end
+      it "returns the expected pokemon" do
+        expect(@pokemon['id']).to eql(@id)
+        expect(@pokemon).to have_key('name')
+        expect(@pokemon).to have_key('weight')
+        expect(@pokemon).to have_key('forms')
+        expect(@pokemon).to have_key('moves')
+        expect(@pokemon).to have_key('species')
       end
     end
     context "Given no ID" do
@@ -22,7 +48,14 @@ describe "Pokemon Api" do
   describe "Ability Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("ability", 1).code).to eql(200)
+        expect(@ability.code).to eql(200)
+      end
+      it "returns the expected ability" do
+        expect(@ability['id']).to eql(@id)
+        expect(@ability).to have_key('name')
+        expect(@ability).to have_key('generation')
+        expect(@ability).to have_key('effect_changes')
+        expect(@ability).to have_key('pokemon')
       end
     end
     context "Given no ID" do
@@ -35,9 +68,16 @@ describe "Pokemon Api" do
   describe "characteristic Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("characteristic", 1).code).to eql(200)
+        expect(@characteristic.code).to eql(200)
+      end
+      it "returns the expected characteristic" do
+        expect(@characteristic['id']).to eql(@id)
+        expect(@characteristic).to have_key('gene_modulo')
+        expect(@characteristic).to have_key('possible_values')
+        expect(@characteristic).to have_key('descriptions')
       end
     end
+
     context "Given no ID" do
       it "returns a HTML code of 200." do
         expect(Pokeapi.get_the_resource("characteristic").code).to eql(200)
@@ -48,7 +88,13 @@ describe "Pokemon Api" do
   describe "egg-group Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("egg-group", 1).code).to eql(200)
+        expect(@egg_group.code).to eql(200)
+      end
+      it "returns the expected egg-group" do
+        expect(@egg_group['id']).to eql(@id)
+        expect(@egg_group).to have_key('name')        
+        expect(@egg_group).to have_key('names')        
+        expect(@egg_group).to have_key('pokemon_species')        
       end
     end
     context "Given no ID" do
@@ -61,7 +107,13 @@ describe "Pokemon Api" do
   describe "gender Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("gender", 1).code).to eql(200)
+        expect(@gender.code).to eql(200)
+      end
+      it "returns the expected gender" do
+        expect(@gender['id']).to eql(@id)
+        expect(@gender).to have_key('name')
+        expect(@gender).to have_key('pokemon_species_details')
+        expect(@gender).to have_key('required_for_evolution')
       end
     end
 
@@ -75,7 +127,14 @@ describe "Pokemon Api" do
   describe "growth-rate Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("growth-rate", 1).code).to eql(200)
+        expect(@growth_rate.code).to eql(200)
+      end
+      it "returns the expected growth_rate" do
+        expect(@growth_rate['id']).to eql(@id)
+        expect(@growth_rate).to have_key('name')
+        expect(@growth_rate).to have_key('descriptions')
+        expect(@growth_rate).to have_key('levels')
+
       end
     end
     context "Given no ID" do
@@ -88,7 +147,14 @@ describe "Pokemon Api" do
   describe "nature Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("nature", 1).code).to eql(200)
+        expect(@nature.code).to eql(200)
+      end
+      it "returns the expected nature" do
+        expect(@nature['id']).to eql(@id)
+        expect(@nature).to have_key('name')
+        expect(@nature).to have_key('hates_flavor')
+        expect(@nature).to have_key('move_battle_style_preferences')
+
       end
     end
     context "Given no ID" do
@@ -101,7 +167,13 @@ describe "Pokemon Api" do
   describe "pokeathlon-stat Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokeathlon-stat", 1).code).to eql(200)
+        expect(@pokeathlon_stat.code).to eql(200)
+      end
+      it "returns the expected stats" do
+        expect(@pokeathlon_stat['id']).to eql(@id)
+        expect(@pokeathlon_stat).to have_key('name')
+        expect(@pokeathlon_stat).to have_key('affecting_natures')
+        expect(@pokeathlon_stat).to have_key('names')
       end
     end
     context "Given no ID" do
@@ -114,7 +186,14 @@ describe "Pokemon Api" do
   describe "pokemon-color Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokemon-color", 1).code).to eql(200)
+        expect(@pokemon_color.code).to eql(200)
+      end
+      it "returns the expected color" do
+        expect(@pokemon_color['id']).to eql(@id)
+        expect(@pokemon_color).to have_key('name')
+        expect(@pokemon_color).to have_key('names')
+        expect(@pokemon_color).to have_key('pokemon_species')
+
       end
     end
     context "Given no ID" do
@@ -126,8 +205,15 @@ describe "Pokemon Api" do
 
   describe "pokemon-form Endpoint" do
     context "Given an ID" do
-      it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokemon-form", 1).code).to eql(200)
+      it "returns a HTML code of form." do
+        expect(@pokemon_form.code).to eql(200)
+      end
+      it "returns the expected form" do
+        expect(@pokemon_form['id']).to eql(@id)
+        expect(@pokemon_form).to have_key('name')
+        expect(@pokemon_form).to have_key('order')
+        expect(@pokemon_form).to have_key('pokemon')
+
       end
     end
     context "Given no ID" do
@@ -140,7 +226,12 @@ describe "Pokemon Api" do
   describe "pokemon-habitat" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokemon-habitat", 1).code).to eql(200)
+        expect(@pokemon_habitat.code).to eql(200)
+      end
+      it "returns the expected habitat" do
+        expect(@pokemon_habitat['id']).to eql(@id)
+        expect(@pokemon_habitat).to have_key('name')
+        expect(@pokemon_habitat).to have_key('names')
       end
     end
     context "Given no ID" do
@@ -153,7 +244,13 @@ describe "Pokemon Api" do
   describe "pokemon-shape Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokemon-shape", 1).code).to eql(200)
+        expect(@pokemon_shape.code).to eql(200)
+      end
+      it "returns the expected egg-group" do
+        expect(@pokemon_shape['id']).to eql(@id)
+        expect(@pokemon_shape).to have_key('name')
+        expect(@pokemon_shape).to have_key('awesome_names')
+        expect(@pokemon_shape).to have_key('pokemon_species')
       end
     end
     context "Given no ID" do
@@ -166,7 +263,13 @@ describe "Pokemon Api" do
   describe "pokemon-species Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("pokemon-species", 1).code).to eql(200)
+        expect(@pokemon_species.code).to eql(200)
+      end
+      it "returns the expected species" do
+        expect(@pokemon_species['id']).to eql(@id)
+        expect(@pokemon_species).to have_key('name')
+        expect(@pokemon_species).to have_key('is_baby')
+        expect(@pokemon_species).to have_key('forms_switchable')
       end
     end
     context "Given on ID" do
@@ -179,7 +282,15 @@ describe "Pokemon Api" do
   describe "stat Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("stat", 1).code).to eql(200)
+        expect(@stat.code).to eql(200)
+      end
+      it "returns the expected stat" do
+        expect(@stat['id']).to eql(@id)
+        expect(@stat).to have_key('name')
+        expect(@stat).to have_key('game_index')
+        expect(@stat).to have_key('affecting_natures')
+        expect(@stat).to have_key('characteristics')
+        expect(@stat).to have_key('move_damage_class')
       end
     end
     context "Given no ID" do
@@ -193,7 +304,13 @@ describe "Pokemon Api" do
   describe "type Endpoint" do
     context "Given an ID" do
       it "returns a HTML code of 200." do
-        expect(Pokeapi.get_the("type", 1).code).to eql(200)
+        expect(@type.code).to eql(200)
+      end
+      it "returns the expected egg-group" do
+        expect(@type['id']).to eql(@id)
+        expect(@type).to have_key('name')
+        expect(@type).to have_key('game_indices')
+        expect(@type).to have_key('move_damage_class')
       end
     end
     context "Given no ID" do

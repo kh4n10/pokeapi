@@ -11,9 +11,10 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("encounter-method", 1).code).to eql(200)
 				end
-				it "returns data with id 1" do
-					expect(Pokeapi.get_the("encounter-method", 1)['id']).to eql(1)
-				end
+	      it "returns encounter method 1" do
+	        expect(Pokeapi.get_the("encounter-method", 1)["id"]).to eql(1)
+	        expect(Pokeapi.get_the("encounter-method", 1)["name"]).to eql("walk")
+	      end
 			end
 			context "When requesting encounter method with no id" do
 				it "returns response code 200" do
@@ -27,9 +28,10 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("encounter-condition", 1).code).to eql(200)
 				end
-				it "returns data with id 1" do
-					expect(Pokeapi.get_the("encounter-condition", 1)['id']).to eql(1)
-				end
+	      it "returns encounter condition 1" do
+	        expect(Pokeapi.get_the("encounter-condition", 1)["id"]).to eql(1)
+	        expect(Pokeapi.get_the("encounter-condition", 1)["name"]).to eql("swarm")
+	      end
 			end
 			context "When requesting encounter condition with no id" do
 				it "returns response code 200" do
@@ -43,9 +45,10 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("encounter-condition-value", 1).code).to eql(200)
 				end
-				it "returns data with id 1" do
-					expect(Pokeapi.get_the("encounter-condition-value", 1)['id']).to eql(1)
-				end
+	      it "returns encounter value 1" do
+	        expect(Pokeapi.get_the("encounter-condition-value", 1)["id"]).to eql(1)
+	        expect(Pokeapi.get_the("encounter-condition-value", 1)["name"]).to eql("swarm-yes")
+	      end
 			end
 			context "When requesting encounter condition value with no id" do
 				it "returns response code 200" do
