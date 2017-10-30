@@ -19,12 +19,17 @@ I tested each endpoint in the pokemon resource to return the code 200 when given
 
 
 ####Martha
-
+I tested each endpoint in Encounters, Evolution and Games to return the code 200 when given no ID or a valid ID
 
 ####Liam
 
 ####Luke
+Luke created the get resource method which allowed tests on each spec checking that the request would work with only the resource name and doesn't need an ID.
 
 ####James
 
 ####Abass
+
+* I tested each endpoint in the location/utility resources. Ensuring that its in JSON format and that it returns the 200 code when given a valid ID.
+
+* I tested that given an id for the evolution, games and items resources it returns the correct data e.g. a name returns the correct name in a string etc.
