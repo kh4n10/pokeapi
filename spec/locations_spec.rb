@@ -53,8 +53,8 @@ describe "Pokeapi" do
       it "Returns code  and gives the ok message(200)" do
         expect(Pokeapi.get_the_resource("location").code).to eql(200)
       end
-      
-      it "Returns the resouce list as a Hash" do
+
+      it "Returns the resouce list as a JSON file" do
         expect(Pokeapi.get_the_resource("location").parsed_response).to be_instance_of Hash
       end
     end
