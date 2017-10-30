@@ -11,6 +11,9 @@ describe Pokeapi do
 				it "returns response code 200" do
 					expect(Pokeapi.get_the("evolution-chain", 1).code).to eql(200)
 				end
+				it "returns data with id 1" do
+					expect(Pokeapi.get_the("encounter-condition", 1)['id']).to eql(1)
+				end
 			end
 			context "When requesting evolution chain with no id" do
 				it "returns response code 200" do
