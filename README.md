@@ -24,8 +24,7 @@ I tested each endpoint in Encounters, Evolution and Games to return the code 200
 #### Liam
 I tested each endpoint for both the berry and contest resources as well as their sub-resources. The tests I wrote test the HTTP response code for the resource lists and first of each resource. Also for the individual instances of the resource I wrote tests to check that the API only returns one thing and that it is the correct thing.  
 I got the resource lists for both and the first of each before all the tests start. By using the
-```before(:all) do
-end```
+```before(:all) do  end```
 syntax. This saves making requests in each test and makes the tests easier to read.
 
 #### Luke
