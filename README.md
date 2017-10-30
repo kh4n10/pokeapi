@@ -22,6 +22,11 @@ I tested each endpoint in the pokemon resource to return the code 200 when given
 I tested each endpoint in Encounters, Evolution and Games to return the code 200 when given no ID or a valid ID
 
 ####Liam
+I tested each endpoint for both the berry and contest resources as well as their sub-resources. The tests I wrote test the HTTP response code for the resource lists and first of each resource. Also for the individual instances of the resource I wrote tests to check that the API only returns one thing and that it is the correct thing.  
+I got the resource lists for both and the first of each before all the tests start. By using the
+```before(:all) do
+end```
+syntax. This saves making requests in each test and makes the tests easier to read.
 
 ####Luke
 Luke created the get resource method which allowed tests on each spec checking that the request would work with only the resource name and doesn't need an ID.
