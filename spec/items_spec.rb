@@ -9,11 +9,23 @@ describe Pokeapi do
     it "responds with code 200; okay" do
       expect(Pokeapi.get_the("item",1).code).to eql(200)
     end
+    it "returns data with correct id" do
+      expect(Pokeapi.get_the("item", 1)['id']).to eql(1)
+    end
+    it "returns a name as a string" do
+      expect(Pokeapi.get_the("item", 1)['name']).to be_instance_of String
+    end
   end
 
   context "given a request for an attribute" do
     it "responds with 200; okay" do
       expect(Pokeapi.get_the("item-attribute",1).code).to eql(200)
+    end
+    it "returns data with correct id" do
+      expect(Pokeapi.get_the("item-attribute", 1)['id']).to eql(1)
+    end
+    it "returns a name as a string" do
+      expect(Pokeapi.get_the("item", 1)['name']).to be_instance_of String
     end
   end
 
@@ -21,17 +33,35 @@ describe Pokeapi do
     it "responds with 200; okay" do
       expect(Pokeapi.get_the("item-category",1).code).to eql(200)
     end
+    it "returns data with correct id" do
+      expect(Pokeapi.get_the("item-category", 1)['id']).to eql(1)
+    end
+    it "returns a name as a string" do
+      expect(Pokeapi.get_the("item", 1)['name']).to be_instance_of String
+    end
   end
 
   context "given a request for a fling effect" do
     it "responds with 200; okay" do
       expect(Pokeapi.get_the("item-fling-effect",1).code).to eql(200)
     end
+    it "returns data with correct id" do
+      expect(Pokeapi.get_the("item-fling-effect", 1)['id']).to eql(1)
+    end
+    it "returns a name as a string" do
+      expect(Pokeapi.get_the("item", 1)['name']).to be_instance_of String
+    end
   end
 
   context "given a request for a pocket slot" do
     it "responds with 200; okay" do
       expect(Pokeapi.get_the("item-pocket",1).code).to eql(200)
+    end
+    it "returns data with correct id" do
+      expect(Pokeapi.get_the("item-pocket", 1)['id']).to eql(1)
+    end
+    it "returns a name as a string" do
+      expect(Pokeapi.get_the("item", 1)['name']).to be_instance_of String
     end
   end
 
